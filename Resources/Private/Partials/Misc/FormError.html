@@ -1,0 +1,16 @@
+<f:spaceless>
+    <f:format.raw>
+        [
+        <f:flashMessages queueIdentifier="extbase.flashmessages.tx_pagepassword_form" as="flashMessages">
+            <f:for each="{flashMessages}" as="flashMessage" iteration="iterator">
+                <f:if condition="{flashMessage.severity.value} == 2">
+                    <f:format.json value="{
+                        title: flashMessage.title,
+                        message: flashMessage.message
+                    }"/><f:if condition="{iterator.isLast}"><f:else>,</f:else></f:if>
+                </f:if>
+            </f:for>
+        </f:flashMessages>
+        ]
+    </f:format.raw>
+</f:spaceless>

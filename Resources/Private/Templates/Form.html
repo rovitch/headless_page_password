@@ -1,0 +1,13 @@
+<f:spaceless>
+    <f:format.raw>
+        <f:format.json value="{
+            settings: '{f:render(partial: \'Settings\', arguments: \'{_all}\') -> headless:format.json.decode()}',
+            errors: '{f:render(partial: \'Misc/FormError\', arguments: \'{_all}\') -> headless:format.json.decode()}',
+            form: {
+                title: '{f:translate(key: \'form.title\')}',
+                description: '{f:translate(key: \'form.description\')}',
+                form: '{f:render(partial: \'Fields\', arguments: \'{_all}\') -> headless:format.json.decode() -> headlesspagepassword:form(action:\'login\', controller: \'Auth\', requestToken: requestToken) -> headless:format.json.decode()}'
+            }
+        }"/>
+    </f:format.raw>
+</f:spaceless>

@@ -1,0 +1,27 @@
+plugin.tx_pagepassword {
+    view {
+        templateRootPaths.20 = EXT:headless_page_password/Resources/Private/Templates/
+        partialRootPaths.20 = EXT:headless_page_password/Resources/Private/Partials/
+        layoutRootPaths.20 = EXT:headless_page_password/Resources/Private/Layouts/
+    }
+}
+
+lib.pagepasswordLogo >
+lib.pagepasswordLogo = COA
+lib.pagepasswordLogo {
+  10 = FILES
+  10 {
+    references {
+      uid.data = field: uid
+      table = tt_content
+      fieldName.data = field: fieldname
+    }
+    renderObj = TEXT
+    renderObj.stdWrap.data = file:current:publicUrl
+  }
+}
+
+temp.pagepassword_form < tt_content.pagepassword_form
+tt_content.pagepassword_form >
+tt_content.pagepassword_form =< lib.contentElementWithHeader
+tt_content.pagepassword_form.fields.content.fields.data < temp.pagepassword_form.20

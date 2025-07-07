@@ -1,0 +1,40 @@
+{
+  "name": "rovitch/headless-page-password",
+  "type": "typo3-cms-extension",
+  "description": "This extension provides integration with page_password to output content from TYPO3 in JSON format.",
+  "keywords": [
+    "TYPO3",
+    "headless",
+    "pwa",
+    "json",
+    "page_password"
+  ],
+  "license": [
+    "GPL-2.0-or-later"
+  ],
+  "authors": [
+  ],
+  "require": {
+    "typo3/cms-core": "^12.4 || ^13.4",
+    "rovitch/page-password": "^1.0"
+  },
+  "suggest": {
+    "friendsoftypo3/headless": "^4.0"
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "headless_page_password"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "Rovitch\\HeadlessPagePassword\\": "Classes"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "typo3/cms-composer-installers": true,
+      "typo3/class-alias-loader": true
+    }
+  }
+}

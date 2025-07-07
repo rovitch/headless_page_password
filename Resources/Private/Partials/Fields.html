@@ -1,0 +1,24 @@
+<f:spaceless>
+    <headlesspagepassword:form.registerField name="password"/>
+    <headlesspagepassword:form.registerField name="uid"/>
+    <headlesspagepassword:form.registerField name="redirect_uri"/>
+    <f:format.raw>
+        [
+            <f:format.json value="{
+                type: 'password',
+                label: '{f:translate(extensionName: key:\'form.password\')}',
+                name: '{headlesspagepassword:form.generateName(name:\'password\')}',
+            }"/>,
+            <f:format.json value="{
+                type: 'hidden',
+                name: '{headlesspagepassword:form.generateName(name:\'uid\')}',
+                value: '{protectedPageId}'
+            }"/>,
+            <f:format.json value="{
+                type: 'hidden',
+                name: '{headlesspagepassword:form.generateName(name:\'redirect_uri\')}',
+                value: '{redirectUri}'
+            }"/>
+        ]
+    </f:format.raw>
+</f:spaceless>

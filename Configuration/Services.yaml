@@ -1,0 +1,13 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Rovitch\HeadlessPagePassword\:
+    resource: '../Classes/*'
+
+  Rovitch\HeadlessPagePassword\EventListener\AllowSpecialPageTypesListener:
+    tags:
+      - name: event.listener
+        identifier: 'allowSpecialPageTypes'
